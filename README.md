@@ -14,6 +14,7 @@ By harnessing eye-tracking data and image features, this research aims to develo
 
 To test on your own data, you need to prepare the data as follows:
 
+```
 main_data_folder/
 ├── case_study_A/
 │   ├── radA/
@@ -24,6 +25,6 @@ main_data_folder/
 │   │   ├── b/
 │   │   ├── c/
 │   ├── radB/
-
+```
 
 
