@@ -14,7 +14,7 @@ By harnessing eye-tracking data and image features, this research aims to develo
 
 To test on your own data, you need to prepare the data as follows:
 
-1. The **"data_folder"** must contain three files: **train.csv, test.csv,** and **val.csv**. Each of these files (**train.csv, test.csv, val.csv**) should store the path to **"gaze_features.csv"**.
+1. The **"data_folder"** must contain three files: **train.csv, test.csv,** and **val.csv**. Each of these files (**train.csv, test.csv, val.csv**) should store the path to **"gaze_features.csv"** and **label**.
 2. Please note the **"create_dict_dataset"** function in **"dataloader.py"** — this function is specifically designed for our dataset. You can modify the folder names (**feature_folder**), the feature file name (**feature_name_csv**), and the path to the feature file (**path_to_features** within the function itself).
 
 ```
