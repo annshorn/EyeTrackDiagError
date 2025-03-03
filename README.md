@@ -25,6 +25,7 @@ data_folder/
 │   │   │   ├── raw_gaze.csv
 │   │   │   ├── gru/
 │   │   │   │   ├── gaze_features.csv
+│   │   │   │   ├── images_encoder.pt (optional)
 │   │   ├── b/
 │   │   ├── c/
 │   ├── radB/
