@@ -14,8 +14,10 @@ By harnessing eye-tracking data and image features, this research aims to develo
 
 To test on your own data, you need to prepare the data as follows:
 
+1. The **"data_folder"** must contain three files: **train.csv, test.csv,** and **val.csv**. Each of these files (**train.csv, test.csv, val.csv**) should store the path to **"gaze_features.csv"**.
+
 ```
-main_data_folder/
+data_folder/
 ├── case_study_A/
 │   ├── radA/
 │   │   ├── a/
@@ -25,6 +27,9 @@ main_data_folder/
 │   │   ├── b/
 │   │   ├── c/
 │   ├── radB/
+├── train.csv
+├── test.csv
+├── val.csv
 ```
 
 
