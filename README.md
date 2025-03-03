@@ -8,4 +8,22 @@ Radiologists often face the challenge of making accurate diagnoses based on radi
 
 By harnessing eye-tracking data and image features, this research aims to develop a predictive model that identifies potential inaccuracies in radiologist interpretations, thereby enhancing the diagnostic process.
 
+## Usage
+
+### Dataset
+
+To test on your own data, you need to prepare the data as follows:
+
+main_data_folder/
+├── case_study_A/
+│   ├── radA/
+│   │   ├── a/
+│   │   │   ├── raw_gaze.csv
+│   │   │   ├── gru/
+│   │   │   │   ├── gaze_features.csv
+│   │   ├── b/
+│   │   ├── c/
+│   ├── radB/
+
+
 
