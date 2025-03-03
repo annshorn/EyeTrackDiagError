@@ -32,6 +32,6 @@ data_folder/
 ├── test.csv
 ├── val.csv
 ```
-
+3. If all files are prepared, run the **"prepare_longitudinal_dataset"** function in **"dataloader.py"**. This function will generate three dictionaries: **grouped_train.pkl, grouped_test.pkl,** and **grouped_val.pkl**, and will save them in the **"data_folder"**.
 
 
