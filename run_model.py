@@ -2,7 +2,7 @@ import os
 import sys
 import yaml
 sys.path.insert(1, os.path.abspath(".."))
-codes_dir = os.path.join('/home/csn801/EyeTrackDiagError/', 'lib') 
+codes_dir = os.path.join('../EyeTrackDiagError/', 'lib') 
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
