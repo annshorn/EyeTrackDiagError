@@ -3,6 +3,7 @@ import sys
 import yaml
 sys.path.insert(1, os.path.abspath(".."))
 codes_dir = os.path.join('../EyeTrackDiagError/', 'lib') 
+import pytorch_lightning as pl
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
@@ -15,6 +16,9 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Device type: {DEVICE}")
 
 def run(config):
+
+    torch.manual_seed(config["seed"])
+    pl.seed_everything(config["seed"])
  
     ModelClass = getattr(models, config["model_class"])
     model = ModelClass(**config["model_params"]).to(DEVICE)
