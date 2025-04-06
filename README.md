@@ -24,8 +24,8 @@ data_folder/
 │   ├── radA/
 │   │   ├── a/
 │   │   │   ├── raw_gaze.csv
-│   │   │   ├── gru/
-│   │   │   │   ├── gaze_features.csv
+│   │   │   ├── project_folder/
+│   │   │   │   ├── features.csv
 │   │   │   │   ├── images_encoder.pt (optional)
 │   │   ├── b/
 │   │   ├── c/
