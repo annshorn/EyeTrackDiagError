@@ -25,7 +25,7 @@ data_folder/
 │   │   ├── a/
 │   │   │   ├── raw_gaze.csv
 │   │   │   ├── project_folder/
-│   │   │   │   ├── features.csv
+│   │   │   │   ├── gaze_features.csv
 │   │   │   │   ├── images_encoder.pt (optional)
 │   │   ├── b/
 │   │   ├── c/
