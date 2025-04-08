@@ -60,20 +60,8 @@ def save_dicts(my_dict, json_file_name):
         pickle.dump(my_dict, json_file)
 
 
-def model_eval(
-        model: torch.nn.Module,
-        weights: dict,
-        test_loader: torch.utils.data.DataLoader,
-        device: torch.device
-    ):
-    """
-    Evaluate the given model on the test set and print various performance metrics.
-
-    Args:
-        model (torch.nn.Module): The PyTorch model to evaluate.
-        weights (dict): Model weights (state_dict).
-        test_loader (torch.utils.data.DataLoader): DataLoader for the test dataset.
-        device (torch.device): Device to run the evaluation on (CPU/GPU).
+def model_eval(model, weights, test_loader, device):
+    """Evaluate the given model.
     """
     try:
         model.load_state_dict(weights)
