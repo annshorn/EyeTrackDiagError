@@ -10,6 +10,10 @@ By harnessing eye-tracking data and image features, this research aims to develo
 
 ## Usage
 
+```
+run_model.py ../configs/read_features.yml
+```
+
 ### Dataset
 
 To test on your own data, you need to prepare the data as follows:
