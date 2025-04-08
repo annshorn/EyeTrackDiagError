@@ -1,0 +1,20 @@
+# ====== experiment ======
+type: "tabular"
+seed: 42
+batch_size: 64
+num_epochs: 400
+
+# ====== model configuration ======
+model_class: "TabularModelPL"
+model_params:
+    input_size: 27
+    hidden_size: 32
+    num_layers: 2
+    output_size: 2
+    learning_rate: 0.00003
+    weight_decay: 0.0004
+
+# ====== data ======
+output_folder: "/runs/"
+output_name: ""
+seq_length: 240
