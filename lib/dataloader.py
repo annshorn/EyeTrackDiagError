@@ -5,11 +5,11 @@ from torch.utils.data import Dataset, DataLoader
 import pandas as pd
 
 # Please split your data and prepare DataFrames: ROOT_PATH/train.csv, ROOT_PATH/test.csv, and ROOT_PATH/val.csv
-ROOT_PATH = '../allData/gaze_data'
+ROOT_PATH = 'data_folder'
 PATH_TO_SAVEDATA = '../project_folder_name/data'
 FOLDER_NAME = 'project_folder'
-FEATURES_NAME = 'features.csv'
-EMB_NAME = 'composite_embeddings.pt'
+FEATURES_NAME = 'gaze_features.csv'
+EMB_NAME = 'images_encoder.pt'
 
 
 def create_dict_dataset(df):
