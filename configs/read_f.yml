@@ -15,6 +15,6 @@ model_params:
     weight_decay: 0.0004
 
 # ====== data ======
-output_folder: "/runs/"
+output_folder: "/project_folder_name/runs/"
 output_name: ""
 seq_length: 240
