@@ -2,7 +2,7 @@ import os
 import sys
 import yaml
 sys.path.insert(1, os.path.abspath(".."))
-codes_dir = os.path.join('../EyeTrackDiagError/', 'lib') 
+codes_dir = os.path.join('../Elsevier25/', 'lib') 
 import pytorch_lightning as pl
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import TensorBoardLogger
@@ -11,6 +11,8 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from lib import utils, models, dataloader
 import torch
 import torch.utils.tensorboard
+import numpy as np
+import random
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Device type: {DEVICE}")
@@ -19,6 +21,8 @@ def run(config):
 
     torch.manual_seed(config["seed"])
     pl.seed_everything(config["seed"])
+    random.seed(config["seed"])
+    np.random.seed(config["seed"])
  
     ModelClass = getattr(models, config["model_class"])
     model = ModelClass(**config["model_params"]).to(DEVICE)
@@ -28,11 +32,11 @@ def run(config):
     save_model_path = utils.create_save_folder(model_prefix, **config)
 
     checkpoint_callback = ModelCheckpoint(
-                        monitor='val_loss',
+                        monitor='val_auc',
                         dirpath= save_model_path,
                         filename='best-model',
                         save_top_k=1,
-                        mode='min',
+                        mode='max',
                         save_last=True
                     )
 
@@ -42,14 +46,14 @@ def run(config):
                     enable_progress_bar=False,
                     accelerator=DEVICE.type,
                     callbacks=[checkpoint_callback])
-    trainer.fit(model, train_dataloaders=train_loader, val_dataloaders=test_loader)
+    trainer.fit(model, train_dataloaders=train_loader, val_dataloaders=val_loader)
 
     print('last model:')
-    weights = torch.load(os.path.join(save_model_path, 'latest-model-v1.ckpt'))
+    weights = torch.load(os.path.join(save_model_path, 'last.ckpt'), map_location=DEVICE)
     utils.model_eval(model, weights, test_loader, DEVICE)
 
     print('best model:')
-    weights = torch.load(os.path.join(save_model_path, 'best-model.ckpt'))
+    weights = torch.load(os.path.join(save_model_path, 'best-model.ckpt'), map_location=DEVICE)
     utils.model_eval(model, weights, test_loader, DEVICE)
 
 
