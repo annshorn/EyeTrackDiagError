@@ -77,7 +77,7 @@ def model_eval(
     """
     try:
         model.load_state_dict(weights)
-    except KeyError:
+    except:
         model.load_state_dict(weights["state_dict"])
 
     model.to(device)
@@ -132,10 +132,4 @@ def model_eval(
     print(f'Recall (Sensitivity): {recall:.4f}')
     print(f'Specificity: {specificity:.4f}')
     print('=============')
-
-
-
-
-    
-
-
+        
