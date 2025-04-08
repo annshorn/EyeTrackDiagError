@@ -53,9 +53,9 @@ def prepare_longitudinal_dataset():
     train = create_dict_dataset(splitted_train_df)
     test = create_dict_dataset(splitted_test_df)
     val = create_dict_dataset(splitted_val_df)
-    save_dicts(train, os.path.join(PATH_TO_SAVEDATA, "grouped_elsevier25_train"))
-    save_dicts(test, os.path.join(PATH_TO_SAVEDATA, "grouped_elsevier25_test"))
-    save_dicts(val, os.path.join(PATH_TO_SAVEDATA, "grouped_elsevier25_val"))
+    save_dicts(train, os.path.join(PATH_TO_SAVEDATA, "grouped_train"))
+    save_dicts(test, os.path.join(PATH_TO_SAVEDATA, "grouped_test"))
+    save_dicts(val, os.path.join(PATH_TO_SAVEDATA, "grouped_val"))
     return train, test, val
 
 def return_reading_seq(seq, sequence_length):
@@ -159,9 +159,9 @@ def get_train_val_test(**kwargs):
     data_type = kwargs.get("type", "tabular")
     batch_size = kwargs.get("batch_size", 64)
 
-    train_path = os.path.join(PATH_TO_SAVEDATA, "grouped_elsevier25_train.pkl")
-    val_path = os.path.join(PATH_TO_SAVEDATA, "grouped_elsevier25_val.pkl")
-    test_path = os.path.join(PATH_TO_SAVEDATA, "grouped_elsevier25_test.pkl")
+    train_path = os.path.join(PATH_TO_SAVEDATA, "grouped_train.pkl")
+    val_path = os.path.join(PATH_TO_SAVEDATA, "grouped_val.pkl")
+    test_path = os.path.join(PATH_TO_SAVEDATA, "grouped_test.pkl")
     if os.path.exists(train_path) and os.path.exists(val_path) and os.path.exists(test_path):
         train = load_pickle_file(train_path)
         val = load_pickle_file(val_path)
